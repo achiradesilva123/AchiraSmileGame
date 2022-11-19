@@ -13,11 +13,11 @@
 <div class="container text-center">
     <div class="row row-1">
         <div class="col-2" >
-            <h6 id="current-mode" style="margin-top: 1vh ; padding-top: 4vh; margin-bottom: 2vh; color: #0A283A; " >kk</h6>
+            <h6 id="current-mode" style="margin-top: 1vh ; padding-top: 4vh; margin-bottom: 2vh; color: #0A283A; " ></h6>
         </div>
         <div class="col-8"></div>
         <div class="col-2">
-            <h6 id="current-user" style="margin-top: 1vh ; padding-top: 4vh; margin-bottom: 2vh; color: #0A283A; " >Chathuri Silva</h6>
+            <h6 id="current-user" style="margin-top: 1vh ; padding-top: 4vh; margin-bottom: 2vh; color: #0A283A; " ></h6>
         </div>
     </div>
     <div class="row row-2">
@@ -26,13 +26,13 @@
             <div class="card mb-3" style="padding-top: 1vh; opacity: 80%;">
                 <div class="row">
                     <div class="col">
-                        <h6 class="card-title" style="margin-top: 1vh ; margin-bottom: 2vh; color: #0A283A; " >Score : 20</h6>
+                        <h6 class="card-title" style="margin-top: 1vh ; margin-bottom: 2vh; color: #0A283A; "  id="score"></h6>
                     </div>
                     <div class="col">
                         <h4 class="card-title" style="margin-top: 1vh ; margin-bottom: 2vh; color: #0A283A; align-content: left !important;" >Lets Get Smiling !!!</h4>
                     </div>
                     <div class="col">
-                        <h6 class="card-title" style="margin-top: 1vh ; margin-bottom: 2vh; color: #0A283A; " >Attempts Left : 2</h6>
+                        <h6 class="card-title" id="attempts" style="margin-top: 1vh ; margin-bottom: 2vh; color: #0A283A; " ></h6>
                     </div>
                 </div>
             </div>
@@ -86,6 +86,7 @@
                 <div class="col-6">
                     <button type="button" class="btn" style="background-color: darkred; color: white; width: 100%;" id="statusWrong">Your Answer Is Wrong</button>
                     <button type="button" class="btn" style="background-color: #117026; color: white; width: 100%;" id="statusCorrect">Your Answer Is Correct</button>
+                    <button type="button" class="btn" style="background-color: saddlebrown; color: white; width: 100%;" id="showScore"></button>
                 </div>
                 <div class="col-2">
                     <button type="button" class="btn" style="background-color: #0A283A; color: white;width: 100%; "id="next" onclick="next()">Next</button>

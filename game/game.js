@@ -1,6 +1,8 @@
 
 var solution;
 var answer;
+var attempts = 0;
+var totalScore = 0;
 $(document).ready(function(){
 
     var mode = localStorage.getItem('mode');
@@ -10,15 +12,21 @@ $(document).ready(function(){
     $("#current-user").text(localStorage.getItem('user').email);
     $("#statusWrong").hide();
     $("#statusCorrect").hide();
+    $("#showScore").hide();
     $("#next").hide();
 
     if(mode=='easy'){
         time = 15;
+        attempts = 5
     }else if(mode=="medium"){
         time = 10;
+        attempts = 3
     }else {
         time = 5;
+        attempts = 2
     }
+
+    $("#attempts").text("Attempts Left : "+attempts);
 
 
     $.ajax({
@@ -67,6 +75,8 @@ $(document).ready(function(){
             $("#btn7").prop('disabled', true);
             $("#btn8").prop('disabled', true);
             $("#btn9").prop('disabled', true);
+            $("#showScore").show();
+            $("#showScore").text("Game Over !!! Your Total Score Is : "+totalScore);
 
 
         }
@@ -78,6 +88,7 @@ function setAnswer(ans){
 }
 
 function submitAnswer(){
+
     $("#submitBtn").prop('disabled', true);
     $("#btn0").prop('disabled', true);
     $("#btn1").prop('disabled', true);
@@ -92,13 +103,36 @@ function submitAnswer(){
 if(answer == solution){
     $("#statusCorrect").show();
     $("#statusWrong").hide();
+    $("#showScore").hide();
     $("#next").show();
+    totalScore = totalScore+10;
+    $("#score").text("Score: "+totalScore);
+    calculateAttempts();
 
 }else{
     $("#statusWrong").show();
     $("#statusCorrect").hide();
+    $("#showScore").hide();
     $("#next").show();
+    $("#score").text("Score: "+totalScore);
+    calculateAttempts();
 }
+}
+
+function calculateAttempts(){
+    attempts --;
+    if(attempts == 0){
+        $("#attempts").text("Attempts Left : "+attempts);
+        $("#next").prop('disabled', true);
+        $("#showScore").show();
+        $("#showScore").text("Game Over !!! Your Total Score Is : "+totalScore);
+        $("#statusWrong").hide();
+        $("#statusCorrect").hide();
+
+
+    }else{
+        $("#attempts").text("Attempts Left : "+attempts);
+    }
 }
 
 function next(){
