@@ -9,20 +9,20 @@ $(document).ready(function(){
     var time;
 
     $("#current-mode").text(localStorage.getItem('mode'));
-    $("#current-user").text(localStorage.getItem('user').email);
+    $("#current-user").text(localStorage.getItem('email'));
     $("#statusWrong").hide();
     $("#statusCorrect").hide();
     $("#showScore").hide();
     $("#next").hide();
 
-    if(mode=='easy'){
-        time = 15;
+    if(mode=='EASY'){
+        time = 5;
         attempts = 5
-    }else if(mode=="medium"){
-        time = 10;
+    }else if(mode=="MEDIUM"){
+        time = 3;
         attempts = 3
     }else {
-        time = 5;
+        time = 1;
         attempts = 2
     }
 
@@ -78,6 +78,26 @@ $(document).ready(function(){
             $("#showScore").show();
             $("#showScore").text("Game Over !!! Your Total Score Is : "+totalScore);
 
+            $("#statusWrong").hide();
+            $("#statusCorrect").hide();
+            $("#next").prop('disabled', true);
+
+            var gameInfo = {
+                email: localStorage.getItem('email'),
+                userId : localStorage.getItem('userId'),
+                score : totalScore,
+                type : localStorage.getItem('mode')
+            };
+
+            $.ajax({
+                url :'http://localhost:8080/api/v1/score',
+                method : 'POST',
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(gameInfo),
+            }).done((res) =>{
+                alert(res.message);
+            })
+
 
         }
     }, 1000);
@@ -128,6 +148,22 @@ function calculateAttempts(){
         $("#showScore").text("Game Over !!! Your Total Score Is : "+totalScore);
         $("#statusWrong").hide();
         $("#statusCorrect").hide();
+
+        var gameInfo = {
+            email: localStorage.getItem('email'),
+            userId : localStorage.getItem('userId'),
+            score : totalScore,
+            type : localStorage.getItem('mode')
+        };
+
+        $.ajax({
+            url :'http://localhost:8080/api/v1/score',
+            method : 'POST',
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(gameInfo),
+        }).done((res) =>{
+            alert(res.message);
+        })
 
 
     }else{

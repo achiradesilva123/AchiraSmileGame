@@ -15,7 +15,9 @@ function login(){
         if(!res.status)
             alert(res.message);
 
-        localStorage.setItem('user',res.data);
+        // localStorage.setItem('user',res.data);
+        localStorage.setItem('userId',res.data.userId);
+        localStorage.setItem('email',res.data.email);
         window.location.href = "../selectMode/mode.html"
 
     })
