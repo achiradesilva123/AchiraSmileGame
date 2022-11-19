@@ -48,31 +48,31 @@
         </div>
         <div class="col-3">
             <div class="card mb-3" style=" padding-top: 2vh; opacity: 80%;  align-items: center; height: 100%;">
-                <div class="row">
+                <div class="row" >
                     <div class="col" style="margin-top: 2vh;">
-                        <button type="submit" class="btn" style="background-color: #0A283A; color: white; width: 4vw; height:10vh">0</button>
-                        <button type="submit" class="btn" style="background-color: #0A283A; color: white; width: 4vw; height:10vh">1</button>
-                        <button type="submit" class="btn" style="background-color: #0A283A; color: white; width: 4vw; height:10vh">2</button>
-                        <button type="submit" class="btn" style="background-color: #0A283A; color: white; width: 4vw; height:10vh" >3</button>
+                        <button type="button" id="btn0" class="btn" style="background-color: #0A283A; color: white; width: 4vw; height:10vh" onclick="setAnswer(0)">0</button>
+                        <button type="button" id="btn1" class="btn" style="background-color: #0A283A; color: white; width: 4vw; height:10vh" onclick="setAnswer(1)">1</button>
+                        <button type="button" id="btn2" class="btn" style="background-color: #0A283A; color: white; width: 4vw; height:10vh" onclick="setAnswer(2)">2</button>
+                        <button type="button" id="btn3" class="btn" style="background-color: #0A283A; color: white; width: 4vw; height:10vh" onclick="setAnswer(3)">3</button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col" style="margin-top: 2vh;">
-                        <button type="submit" class="btn" style="background-color: #0A283A; color: white; width: 4vw; height:10vh">4</button>
-                        <button type="submit" class="btn" style="background-color: #0A283A; color: white; width: 4vw; height:10vh">5</button>
-                        <button type="submit" class="btn" style="background-color: #0A283A; color: white;width: 4vw; height:10vh">6</button>
-                        <button type="submit" class="btn" style="background-color: #0A283A; color: white;width: 4vw; height:10vh">7</button>
+                        <button type="button" id="btn4" class="btn" style="background-color: #0A283A; color: white; width: 4vw; height:10vh" onclick="setAnswer(4)">4</button>
+                        <button type="button" id="btn5" class="btn" style="background-color: #0A283A; color: white; width: 4vw; height:10vh" onclick="setAnswer(5)">5</button>
+                        <button type="button" id="btn6" class="btn" style="background-color: #0A283A; color: white;width: 4vw; height:10vh" onclick="setAnswer(6)">6</button>
+                        <button type="button" id="btn7" class="btn" style="background-color: #0A283A; color: white;width: 4vw; height:10vh" onclick="setAnswer(7)">7</button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col" style="margin-top: 2vh;">
-                        <button type="submit" class="btn" style="background-color: #0A283A; color: white;width: 4vw; height:10vh">8</button>
-                        <button type="submit" class="btn" style="background-color: #0A283A; color: white;width: 4vw; height:10vh">9</button>
+                        <button type="button" class="btn" id="btn8" style="background-color: #0A283A; color: white;width: 4vw; height:10vh" onclick="setAnswer(8)">8</button>
+                        <button type="button" class="btn" id="btn9" style="background-color: #0A283A; color: white;width: 4vw; height:10vh" onclick="setAnswer(9)">9</button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col" style="margin-top: 2vh;margin-bottom: 4vh;">
-                        <button type="button" class="btn" style="background-color: #0A283A; color: white;width: 17vw; height:7vh">Submit</button>
+                        <button type="button" class="btn" style="background-color: #0A283A; color: white;width: 17vw; height:7vh" id="submitBtn" onclick="submitAnswer()">Submit</button>
                     </div>
                 </div>
             </div>
@@ -84,10 +84,11 @@
         <div class="col-10">
             <div class="row">
                 <div class="col-6">
-                    <button type="button" class="btn" style="background-color: #117026; color: white; width: 100%;" id="status">Your Answer Is Correct</button>
+                    <button type="button" class="btn" style="background-color: darkred; color: white; width: 100%;" id="statusWrong">Your Answer Is Wrong</button>
+                    <button type="button" class="btn" style="background-color: #117026; color: white; width: 100%;" id="statusCorrect">Your Answer Is Correct</button>
                 </div>
                 <div class="col-2">
-                    <button type="button" class="btn" style="background-color: #0A283A; color: white;width: 100%; "id="next">Next</button>
+                    <button type="button" class="btn" style="background-color: #0A283A; color: white;width: 100%; "id="next" onclick="next()">Next</button>
                 </div>
                 <div class="col-4">
                     <button type="button" class="btn" style="background-color: #0A283A; color: white;width: 90%; margin-left: 2.5vw" id="target-time">00:00</button>

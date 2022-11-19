@@ -11,11 +11,13 @@ function login(){
      contentType: "application/json; charset=utf-8",
      data: JSON.stringify(sendInfo)
     }).done((res) =>{
+        alert(res.data);
         if(!res.status)
             alert(res.message);
 
-        window.location.href = "../selectMode/mode.html"
         localStorage.setItem('user',res.data);
+        window.location.href = "../selectMode/mode.html"
+
     })
 
 }
