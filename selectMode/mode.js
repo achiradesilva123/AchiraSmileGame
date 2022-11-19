@@ -1,4 +1,4 @@
 function setMode(mode){
-    $.cookie("mode",mode);
+    localStorage.setItem('mode',mode);
     window.location.href = "../game/game.html"
 }

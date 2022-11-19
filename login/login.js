@@ -15,7 +15,7 @@ function login(){
             alert(res.message);
 
         window.location.href = "../selectMode/mode.html"
-        $.cookie("user",res.data);
+        localStorage.setItem('user',res.data);
     })
 
 }
