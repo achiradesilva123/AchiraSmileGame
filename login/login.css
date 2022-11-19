@@ -1,0 +1,12 @@
+body{
+    background-color: #5A84FF !important;
+}
+.row-1{
+    height: 25vh;
+}
+.icon-facebook{
+    background: url('F:/AchiraSmileGame/sources/image/google.png');
+    height: 20px;
+    width: 20px;
+    display: block;
+}

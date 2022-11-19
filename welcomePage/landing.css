@@ -1,0 +1,23 @@
+body { 
+    background-image:url('../sources/image/idle_happy_01.gif');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.row-1{
+    height: 75vh;
+}
+
+.heading{
+    color: white;
+    font-size: 20px;
+}
+
+.row-3{
+    margin-top: 15vh !important;
+}
+
+.footer{
+    font-size: 15px ;
+}
