@@ -141,7 +141,7 @@ if(answer == solution){
 
 function calculateAttempts(){
     attempts --;
-    if(attempts == 0){
+    if(attempts === 0){
         $("#attempts").text("Attempts Left : "+attempts);
         $("#next").prop('disabled', true);
         $("#showScore").show();
